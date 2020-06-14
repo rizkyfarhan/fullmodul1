@@ -1,0 +1,43 @@
+import math
+print ('Pilihan 1 Adalah Menghitung Luas Persegi Panjang')
+print ('Pilihan 2 Adalah Menghitung Luas Lingkaran')
+print ('Pilihan 3 Adalah Menghitung Rata-Rata Nilai')
+print ('Pilihan 4 Adalah Menghitung Variansi dan Standar Deviasi')
+
+
+pilihan = input ('Perhatikan Pilihan Diatas, Silahkan Masukkan Pilihan Anda : ')
+
+if pilihan == '1' :
+    panjang = float (input ('Masukkan Panjang Persegi: '))
+    Lebar = float (input ('Masukkan Lebar Persegi: '))
+    Luas = panjang*Lebar
+    print ('Luas Persegi Panjangnya Adalah : ' + str(Luas))
+elif pilihan == '2' :
+    r = float (input ('Masukkan Jari-Jari Lingkaran: '))
+    luas = math.pi * r**2
+    print ('Luas Lingkarannya Adalah : ' + str(luas))
+elif pilihan == '3' :
+    n = int (input ('Masukkan Banyaknya Data: '))
+    jumlah = 0
+    for i in range (1,n+1) :
+        x = int (input('data ke - ' + str(i) + ': '))
+        jumlah = jumlah + x
+        rata2 = jumlah/n
+    print ('Rata-Rata Nilai Tersebut Adalah : ' + str(rata2))
+elif pilihan == '4' :
+    n = int (input ('Masukkan Banyaknya Data: '))
+    jumlah = 0
+    atas = 0
+    for i in range (1,n+1) :
+        x = int (input('data ke - ' + str(i) + ': '))
+        jumlah = jumlah + x
+        rata2 = jumlah/n
+        a = x**2
+        atas = atas+a
+        bawah = n-1
+        variansi = (atas-(n*(rata2**2)))/bawah
+        stdev = math.sqrt(variansi)
+    print ('Varian Data Tersebut Adalah : ' + str(variansi))
+    print ('Standar Deviasi Data Tersebut Adalah : ' + str(stdev))
+else :
+    print ('Masukkan Pilihan yang Benar')
